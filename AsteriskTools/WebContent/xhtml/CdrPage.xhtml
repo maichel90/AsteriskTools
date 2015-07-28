@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:panelGrid id="grid" >
+				<p:row>
+					<p:column>
+						<h:outputLabel value="Fecha Inicio:" />
+					</p:column>
+					<p:column>
+					
+						<p:calendar id="fechaInicio" value="#{cdrBean.fechaInicio}" pattern="yyyy-MM-dd HH:mm" required="true"/>
+						<p:message for="fechaInicio" />
+					</p:column>
+					<p:column>
+						<h:outputLabel value="Fecha Final:" />
+					</p:column>
+					<p:column>
+						<p:calendar locale="es" value="#{cdrBean.fechaFinal}" pattern="yyyy-MM-dd HH:mm" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	
+						<h:outputLabel value="Origen:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{cdrBean.origenLlamada}"/>	
+					</p:column>
+					<p:column>
+						<h:outputLabel value="Destino:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{cdrBean.destinoLlamada}"/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	
+						<h:outputLabel value="Duracion:" />
+					</p:column>
+					<p:column>
+						<p:inputText type="number" value="#{cdrBean.duracionLlamada}"/>
+					</p:column>
+					<p:column colspan="2">
+						<p:selectOneRadio value="#{cdrBean.opcionDuracionLlamada}" >  
+				            <f:selectItem itemLabel="Menor" itemValue="minorEq" />  
+				            <f:selectItem itemLabel="Igual" itemValue="equals" />  
+				            <f:selectItem itemLabel="Mayor" itemValue="majorEq" />  
+				        </p:selectOneRadio>
+					</p:column>
+			    </p:row>
+				<p:row>	
+		            <p:column colspan="4">
+		            	<p:commandButton value="Buscar registros" actionListener="#{cdrBean.RealizarBusqueda()}" update="grid cdrTable"/>
+		            </p:column>  
+		        </p:row>
+			</p:panelGrid>
+			<br/>
+			<p:dataTable id="cdrTable" value="#{cdrBean.registros}" var="registro" style="width:100%" paginator="true" rows="25"
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}">
+
+				<f:facet name="{Exporters}">
+					<h:commandLink>
+						<p:graphicImage value="/resources/images/excel.png" width="24" />
+						<p:dataExporter type="xls" target="cdrTable" fileName="CallDetailRecordXLS" />
+					</h:commandLink>
+				</f:facet>
+				
+				<p:column headerText="ID">  
+	            	<h:outputText value="#{registro.id}" />  
+	        	</p:column>
+	        	<p:column headerText="Fecha">  
+	            	<h:outputText value="#{registro.calldate}" />  
+	        	</p:column>
+	        	<p:column headerText="Origen">  
+	            	<h:outputText value="#{registro.src}" />  
+	        	</p:column>
+	        	<p:column headerText="Identificador">  
+	            	<h:outputText value="#{registro.clid}" />  
+	        	</p:column>
+	        	<p:column headerText="Destino">  
+	            	<h:outputText value="#{registro.dst}" />  
+	        	</p:column>
+	        	<p:column headerText="Estado">  
+	            	<h:outputText value="#{registro.disposition}" />  
+	        	</p:column>
+	        	<p:column headerText="Duracion">  
+	            	<h:outputText value="#{registro.duration}" />  
+	        	</p:column>
+	        	<p:column headerText="LastApp">  
+	            	<h:outputText value="#{registro.lastapp}" />  
+	        	</p:column>
+	        	<p:column headerText="LastData">  
+	            	<h:outputText value="#{registro.lastdata}" />  
+	        	</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

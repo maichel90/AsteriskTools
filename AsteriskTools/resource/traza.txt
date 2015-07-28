@@ -1,0 +1,747 @@
+Response: Error
+Message: Missing action in request
+
+Event: Newchannel
+Privilege: call,all
+Channel: SIP/1115-00000348
+ChannelState: 0
+ChannelStateDesc: Down
+CallerIDNum: 1115
+CallerIDName: Soporte VoIP Alejandro
+AccountCode: 
+Exten: 04441234
+Context: DLPN_Local
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: SIPURI
+Value: sip:1115@10.5.0.204:5060
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: SIPDOMAIN
+Value: 10.5.0.3
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: SIPCALLID
+Value: Lx8cF5P.G3a68duvJw44-YADxhX4r..6
+Uniqueid: 1390426736.846
+
+Event: Newstate
+Privilege: call,all
+Channel: SIP/1115-00000348
+ChannelState: 4
+ChannelStateDesc: Ring
+CallerIDNum: 1115
+CallerIDName: Soporte VoIP Alejandro
+ConnectedLineNum: 
+ConnectedLineName: 
+Uniqueid: 1390426736.846
+
+Event: ExtensionStatus
+Privilege: call,all
+Exten: 1115
+Context: default
+Hint: SIP/1115
+Status: 1
+
+Event: QueueMemberStatus
+Privilege: agent,all
+Queue: 6501
+Location: SIP/1115
+MemberName: SIP/1115
+Membership: static
+Penalty: 0
+CallsTaken: 0
+LastCall: 0
+Status: 2
+Paused: 0
+
+Event: QueueMemberStatus
+Privilege: agent,all
+Queue: 6501
+Location: SIP/1115
+MemberName: SIP/1115
+Membership: static
+Penalty: 0
+CallsTaken: 0
+LastCall: 0
+Status: 2
+Paused: 0
+
+Event: Newexten
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Context: DLPN_Local
+Extension: 04441234
+Priority: 1
+Application: Macro
+AppData: trunkdial-failover-0.3,SIP/SipETB/4441234,4441234,SipETB,
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_EXTEN
+Value: 04441234
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_CONTEXT
+Value: DLPN_Local
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_PRIORITY
+Value: 1
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_DEPTH
+Value: 1
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: ARG1
+Value: SIP/SipETB/4441234
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: ARG2
+Value: 4441234
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: ARG3
+Value: SipETB
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: ARG4
+Value: 
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_DEPTH
+Value: 1
+Uniqueid: 1390426736.846
+
+Event: Newexten
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Context: macro-trunkdial-failover-0.3
+Extension: s
+Priority: 1
+Application: GotoIf
+AppData: 0?2:3
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_DEPTH
+Value: 1
+Uniqueid: 1390426736.846
+
+Event: Newexten
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Context: macro-trunkdial-failover-0.3
+Extension: s
+Priority: 3
+Application: Goto
+AppData: 1-dial,1
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_DEPTH
+Value: 1
+Uniqueid: 1390426736.846
+
+Event: Newexten
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Context: macro-trunkdial-failover-0.3
+Extension: 1-dial
+Priority: 1
+Application: Set
+AppData: CALLERID(num)=3846270
+Uniqueid: 1390426736.846
+
+Event: NewCallerid
+Privilege: call,all
+Channel: SIP/1115-00000348
+CallerIDNum: 3846270
+CallerIDName: Soporte VoIP Alejandro
+Uniqueid: 1390426736.846
+CID-CallingPres: 0 (Presentation Allowed, Not Screened)
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_DEPTH
+Value: 1
+Uniqueid: 1390426736.846
+
+Event: Newexten
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Context: macro-trunkdial-failover-0.3
+Extension: 1-dial
+Priority: 2
+Application: Dial
+AppData: SIP/SipETB/4441234
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALSTATUS
+Value: 
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALEDPEERNUMBER
+Value: 
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALEDPEERNAME
+Value: 
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: ANSWEREDTIME
+Value: 
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALEDTIME
+Value: 
+Uniqueid: 1390426736.846
+
+Event: Newchannel
+Privilege: call,all
+Channel: SIP/SipETB-00000349
+ChannelState: 0
+ChannelStateDesc: Down
+CallerIDNum: 
+CallerIDName: 
+AccountCode: 
+Exten: 
+Context: DID_SipETB
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: SIPCALLID
+Value: 4073e09c33f4252923601f757f047aba@10.175.18.70:5060
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: DIALEDPEERNUMBER
+Value: SipETB/4441234
+Uniqueid: 1390426736.847
+
+Event: NewCallerid
+Privilege: call,all
+Channel: SIP/SipETB-00000349
+CallerIDNum: 04441234
+CallerIDName: 
+Uniqueid: 1390426736.847
+CID-CallingPres: 0 (Presentation Allowed, Not Screened)
+
+Event: Dial
+Privilege: call,all
+SubEvent: Begin
+Channel: SIP/1115-00000348
+Destination: SIP/SipETB-00000349
+CallerIDNum: 3846270
+CallerIDName: Soporte VoIP Alejandro
+ConnectedLineNum: <unknown>
+ConnectedLineName: <unknown>
+UniqueID: 1390426736.846
+DestUniqueID: 1390426736.847
+Dialstring: SipETB/4441234
+
+Event: Newstate
+Privilege: call,all
+Channel: SIP/SipETB-00000349
+ChannelState: 6
+ChannelStateDesc: Up
+CallerIDNum: 04441234
+CallerIDName: 
+ConnectedLineNum: 3846270
+ConnectedLineName: Soporte VoIP Alejandro
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALSTATUS
+Value: ANSWER
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALEDPEERNAME
+Value: SIP/SipETB-00000349
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALEDPEERNUMBER
+Value: SipETB/4441234
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: BRIDGEPEER
+Value: SIP/SipETB-00000349
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: BRIDGEPEER
+Value: SIP/1115-00000348
+Uniqueid: 1390426736.847
+
+Event: Newstate
+Privilege: call,all
+Channel: SIP/1115-00000348
+ChannelState: 6
+ChannelStateDesc: Up
+CallerIDNum: 3846270
+CallerIDName: Soporte VoIP Alejandro
+ConnectedLineNum: 
+ConnectedLineName: 
+Uniqueid: 1390426736.846
+
+Event: QueueMemberStatus
+Privilege: agent,all
+Queue: 6501
+Location: SIP/1115
+MemberName: SIP/1115
+Membership: static
+Penalty: 0
+CallsTaken: 0
+LastCall: 0
+Status: 2
+Paused: 0
+
+Event: NewAccountCode
+Privilege: call,all
+Channel: SIP/SipETB-00000349
+Uniqueid: 1390426736.847
+AccountCode: 
+OldAccountCode: 
+
+Event: Bridge
+Privilege: call,all
+Bridgestate: Link
+Bridgetype: core
+Channel1: SIP/1115-00000348
+Channel2: SIP/SipETB-00000349
+Uniqueid1: 1390426736.846
+Uniqueid2: 1390426736.847
+CallerID1: 3846270
+CallerID2: 04441234
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: BRIDGEPEER
+Value: SIP/SipETB-00000349
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: BRIDGEPVTCALLID
+Value: 4073e09c33f4252923601f757f047aba@10.175.18.70:5060
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: BRIDGEPEER
+Value: SIP/1115-00000348
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: BRIDGEPVTCALLID
+Value: Lx8cF5P.G3a68duvJw44-YADxhX4r..6
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: BRIDGEPEER
+Value: SIP/SipETB-00000349
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: BRIDGEPVTCALLID
+Value: 4073e09c33f4252923601f757f047aba@10.175.18.70:5060
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: BRIDGEPEER
+Value: SIP/1115-00000348
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: BRIDGEPVTCALLID
+Value: Lx8cF5P.G3a68duvJw44-YADxhX4r..6
+Uniqueid: 1390426736.847
+
+Event: RTCPReceived
+Privilege: reporting,all
+From: 10.5.0.204:4007
+PT: 200(Sender Report)
+ReceptionReports: 1
+SenderSSRC: 0
+FractionLost: 0
+PacketsLost: 0
+HighestSequence: 9813
+SequenceNumberCycles: 0
+IAJitter: 0
+LastSR: 0.0000000000
+DLSR: 0.0000(sec)
+
+Event: RTCPSent
+Privilege: reporting,all
+To: 10.5.0.204:4007
+OurSSRC: 471672762
+SentNTP: 1390426741.4081737728
+SentRTP: 2376321512
+SentPackets: 249
+SentOctets: 39840
+ReportBlock:
+FractionLost: 0
+CumulativeLoss: 0
+IAJitter: 0.0001
+TheirLastSR: 390572278
+DLSR: 1.5790 (sec)
+
+Event: RTCPSent
+Privilege: reporting,all
+To: 10.175.141.23:11029
+OurSSRC: 2059000032
+SentNTP: 1390426741.4082114560
+SentRTP: 110546088
+SentPackets: 251
+SentOctets: 40160
+ReportBlock:
+FractionLost: 0
+CumulativeLoss: 0
+IAJitter: 0.0002
+TheirLastSR: 0
+DLSR: 14965.9960 (sec)
+
+Event: RTCPReceived
+Privilege: reporting,all
+From: 10.5.0.204:4007
+PT: 200(Sender Report)
+ReceptionReports: 1
+SenderSSRC: 0
+FractionLost: 0
+PacketsLost: 0
+HighestSequence: 9990
+SequenceNumberCycles: 0
+IAJitter: 0
+LastSR: 47349.832989947731378176
+DLSR: 1.9500(sec)
+RTT: 8(sec)
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOS
+Value: ssrc=471672762;themssrc=4108215035;lp=0;rxjitter=0.000163;rxcount=348;txjitter=0.000000;txcount=355;rlp=0;rtt=0.008000
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSBRIDGED
+Value: ssrc=471672762;themssrc=4108215035;lp=0;rxjitter=0.000163;rxcount=348;txjitter=0.000000;txcount=355;rlp=0;rtt=0.008000
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSJITTER
+Value: minrxjitter=0.000000;maxrxjitter=0.000000;avgrxjitter=0.000000;stdevrxjitter=0.000000;reported_minjitter=0.000000;reported_maxjitter=0.000000;reported_avgjitter=0.000000;reported_stdevjitter=0.000000;
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSJITTERBRIDGED
+Value: minrxjitter=0.000000;maxrxjitter=0.000000;avgrxjitter=0.000000;stdevrxjitter=0.000000;reported_minjitter=0.000000;reported_maxjitter=0.000000;reported_avgjitter=0.000000;reported_stdevjitter=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSLOSS
+Value: minrxlost=0.000000;maxrxlost=0.000000;avgrxlost=0.000000;stdevrxlost=0.000000;reported_minlost=0.000000;reported_maxlost=0.000000;reported_avglost=0.000000;reported_stdevlost=0.000000;
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSLOSSBRIDGED
+Value: minrxlost=0.000000;maxrxlost=0.000000;avgrxlost=0.000000;stdevrxlost=0.000000;reported_minlost=0.000000;reported_maxlost=0.000000;reported_avglost=0.000000;reported_stdevlost=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSRTT
+Value: minrtt=0.000000;maxrtt=0.000000;avgrtt=0.000000;stdevrtt=0.000000;
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSRTTBRIDGED
+Value: minrtt=0.000000;maxrtt=0.000000;avgrtt=0.000000;stdevrtt=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOS
+Value: ssrc=2059000032;themssrc=3122539838;lp=0;rxjitter=0.000088;rxcount=355;txjitter=0.000000;txcount=348;rlp=0;rtt=0.000000
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSBRIDGED
+Value: ssrc=2059000032;themssrc=3122539838;lp=0;rxjitter=0.000088;rxcount=355;txjitter=0.000000;txcount=348;rlp=0;rtt=0.000000
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSJITTER
+Value: minrxjitter=0.000000;maxrxjitter=0.000000;avgrxjitter=0.000000;stdevrxjitter=0.000000;reported_minjitter=0.000000;reported_maxjitter=0.000000;reported_avgjitter=0.000000;reported_stdevjitter=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSJITTERBRIDGED
+Value: minrxjitter=0.000000;maxrxjitter=0.000000;avgrxjitter=0.000000;stdevrxjitter=0.000000;reported_minjitter=0.000000;reported_maxjitter=0.000000;reported_avgjitter=0.000000;reported_stdevjitter=0.000000;
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSLOSS
+Value: minrxlost=0.000000;maxrxlost=0.000000;avgrxlost=0.000000;stdevrxlost=0.000000;reported_minlost=0.000000;reported_maxlost=0.000000;reported_avglost=0.000000;reported_stdevlost=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSLOSSBRIDGED
+Value: minrxlost=0.000000;maxrxlost=0.000000;avgrxlost=0.000000;stdevrxlost=0.000000;reported_minlost=0.000000;reported_maxlost=0.000000;reported_avglost=0.000000;reported_stdevlost=0.000000;
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSRTT
+Value: minrtt=0.000000;maxrtt=0.000000;avgrtt=0.000000;stdevrtt=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: RTPAUDIOQOSRTTBRIDGED
+Value: minrtt=0.000000;maxrtt=0.000000;avgrtt=0.000000;stdevrtt=0.000000;
+Uniqueid: 1390426736.846
+
+Event: Unlink
+Privilege: call,all
+Channel1: SIP/1115-00000348
+Channel2: SIP/SipETB-00000349
+Uniqueid1: 1390426736.846
+Uniqueid2: 1390426736.847
+CallerID1: 3846270
+CallerID2: 04441234
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: ANSWEREDTIME
+Value: 8
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALEDTIME
+Value: 8
+Uniqueid: 1390426736.846
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOS
+Value: ssrc=2059000032;themssrc=3122539838;lp=0;rxjitter=0.000088;rxcount=355;txjitter=0.000000;txcount=348;rlp=0;rtt=0.000000
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSJITTER
+Value: minrxjitter=0.000000;maxrxjitter=0.000000;avgrxjitter=0.000000;stdevrxjitter=0.000000;reported_minjitter=0.000000;reported_maxjitter=0.000000;reported_avgjitter=0.000000;reported_stdevjitter=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSLOSS
+Value: minrxlost=0.000000;maxrxlost=0.000000;avgrxlost=0.000000;stdevrxlost=0.000000;reported_minlost=0.000000;reported_maxlost=0.000000;reported_avglost=0.000000;reported_stdevlost=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOSRTT
+Value: minrtt=0.000000;maxrtt=0.000000;avgrtt=0.000000;stdevrtt=0.000000;
+Uniqueid: 1390426736.847
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/SipETB-00000349
+Variable: RTPAUDIOQOS
+Value: ssrc=2059000032;themssrc=3122539838;lp=0;rxjitter=0.000088;rxcount=355;txjitter=0.000000;txcount=348;rlp=0;rtt=0.000000
+Uniqueid: 1390426736.847
+
+Event: Hangup
+Privilege: call,all
+Channel: SIP/SipETB-00000349
+Uniqueid: 1390426736.847
+CallerIDNum: 04441234
+CallerIDName: <unknown>
+ConnectedLineNum: 3846270
+ConnectedLineName: Soporte VoIP Alejandro
+Cause: 16
+Cause-txt: Normal Clearing
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: DIALSTATUS
+Value: ANSWER
+Uniqueid: 1390426736.846
+
+Event: Dial
+Privilege: call,all
+SubEvent: End
+Channel: SIP/1115-00000348
+UniqueID: 1390426736.846
+DialStatus: ANSWER
+
+Event: VarSet
+Privilege: dialplan,all
+Channel: SIP/1115-00000348
+Variable: MACRO_DEPTH
+Value: 0
+Uniqueid: 1390426736.846
+
+Event: QueueMemberStatus
+Privilege: agent,all
+Queue: 6501
+Location: SIP/1115
+MemberName: SIP/1115
+Membership: static
+Penalty: 0
+CallsTaken: 0
+LastCall: 0
+Status: 1
+Paused: 0
+
+Event: ExtensionStatus
+Privilege: call,all
+Exten: 1115
+Context: default
+Hint: SIP/1115
+Status: 0
+
+Event: Hangup
+Privilege: call,all
+Channel: SIP/1115-00000348
+Uniqueid: 1390426736.846
+CallerIDNum: 3846270
+CallerIDName: Soporte VoIP Alejandro
+ConnectedLineNum: <unknown>
+ConnectedLineName: <unknown>
+Cause: 16
+Cause-txt: Normal Clearing
+
+Event: QueueMemberStatus
+Privilege: agent,all
+Queue: 6501
+Location: SIP/1115
+MemberName: SIP/1115
+Membership: static
+Penalty: 0
+CallsTaken: 0
+LastCall: 0
+Status: 1
+Paused: 0

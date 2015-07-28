@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:messages id="mensajeFormularioContrasena" showDetail="true" closable="true" />
+			<p:panelGrid styleClass="formularioUsuario">
+				<p:row>
+					<p:column colspan="2" style="font-size: initial;">
+						<br/>
+						<h:outputLabel value="Restablecer Contrasena" />
+						<br/><br/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Antigua contrasena:" /></p:column>
+					<p:column>
+						<p:password value="#{UsuarioBean.contrasena}" required="true" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Nueva contrasena:" />
+					</p:column>
+					<p:column>
+						<p:password value="#{UsuarioBean.nuevaContrasena}" required="true" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Repetir nueva contrasena" />
+					</p:column>
+					<p:column>
+						<p:password value="#{UsuarioBean.cNuevaContrasena}" required="true" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column colspan="2" style="text-align: right; font-size: initial;">
+						<p:commandButton value="Cambiar contrasena" action="#{UsuarioBean.RestablecerContrasena(loginBean.username)}" update="mensajeFormularioContrasena"/> 
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

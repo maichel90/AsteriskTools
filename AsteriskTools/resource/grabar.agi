@@ -1,0 +1,65 @@
+#!/usr/bin/perl
+#
+# Grabar.agi by Gustavo Prada - 2010
+# Description: This AGI uses MixMonitor to record the channel in use and creates a hash with date 
+#              structure to sort records by year, mouth and day.
+# 
+use strict;
+use Asterisk::AGI;
+use File::Path;
+use Date::Format;
+use LWP::Simple;
+
+######################################################################################
+# Define format to record
+my $format = 'gsm';
+# Define the path of records
+my $rutamon = '/var/spool/asterisk/monitor';
+# Define the path to control file
+my $cons = '/var/spool/asterisk/consmon.txt';
+
+my $url = 'http://10.5.0.67:8080/AsteriskTools/GrabacionLlamada?valor=';
+######################################################################################
+# BEGIN OF PROGRAM
+#####################################################################################
+
+my $nomarchivo = @ARGV[0];
+my $AGI = new Asterisk::AGI;
+my $ano = time2str("%Y", time);
+my $mes = time2str("%B", time);
+my $dia = time2str("%d", time);
+my $hora = time2str("%H%M%S", time);
+
+open (FILE, "+<$cons") || system "touch $cons" && open (FILE, "+<$cons");
+my $tmp=<FILE>;
+close (FILE);
+my @tmp2=split(";", $tmp);
+
+if ( $tmp2[0] == $dia ) {
+	open (FILE, ">$cons");
+	$tmp=$tmp2[1]+1;
+	if ( $tmp <= 9 ){
+		$tmp="0$tmp";
+	}
+	print FILE "$dia\;$tmp";
+	close (FILE);
+}
+else {
+	open (FILE, ">$cons");
+        $tmp=1;
+        print FILE "$dia\;$tmp";
+        close (FILE);
+}
+
+my $nameArchivo = "$tmp-$nomarchivo-$hora.$format";
+
+if (-d "$rutamon/$ano/$mes/$dia"){
+	get $url.$nameArchivo;
+	$AGI->exec('MixMonitor', "$rutamon/$ano/$mes/$dia/$nameArchivo" );
+}
+else {
+	mkpath("$rutamon/$ano/$mes/$dia");
+	get $url.$nameArchivo;
+	$AGI->exec('MixMonitor',"$rutamon/$ano/$mes/$dia/$nameArchivo");
+}
+exit;

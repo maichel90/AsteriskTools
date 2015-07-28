@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<div id="arbol">
+				<p:tree id="vistaArbol" value="#{grabArbolBean.root}" var="nodo" selectionMode="single" selection="#{grabArbolBean.nodoSelecionado}">
+					<p:ajax event="select" update="@([id$=grabTable])" listener="#{grabArbolBean.onNodeSelect}" />  
+					<p:treeNode expandedIcon="ui-icon-folder-open"	collapsedIcon="ui-icon-folder-collapsed">
+						<h:outputText value="#{nodo}" />
+					</p:treeNode>
+				</p:tree>
+			</div>
+			<div id="contenido">
+				<p:dataTable id="grabTable" value="#{grabArbolBean.grabaciones}" var="registro" style="width:100%" paginator="true" rows="25">
+					<p:column headerText="ID" sortBy="#{registro.id}">
+						<h:outputText value="#{registro.id}" />
+					</p:column>
+					<p:column headerText="Fecha" sortBy="#{registro.fecha}">
+						<h:outputText value="#{registro.fecha}" />
+					</p:column>
+					<p:column headerText="Origen" sortBy="#{registro.numorigen}">
+						<h:outputText value="#{registro.numorigen}" />
+					</p:column>
+					<p:column headerText="Destino" sortBy="#{registro.numdestino}">
+						<h:outputText value="#{registro.numdestino}" />
+					</p:column>
+					<p:column headerText="Canal" sortBy="#{registro.canal}">
+						<h:outputText value="#{registro.canal}" />
+					</p:column>
+					<p:column headerText="Orientacion"
+						sortBy="#{registro.destinollamada}">
+						<h:outputText value="#{registro.destinollamada}" />
+					</p:column>
+					<p:column headerText="Nodo" sortBy="#{registro.nodo}">
+						<h:outputText value="#{registro.nodo}" />
+					</p:column>
+					<p:column headerText="Archivo">
+						<p:commandButton value="GSM" ajax="false" actionListener="#{grabBusquedaBean.descargarGrabacionGSM(registro)}"/>
+						<p:commandButton value="WAV" ajax="false" actionListener="#{grabBusquedaBean.descargarGrabacionWAV(registro)}" />
+						<p:commandButton value="Escuchar" action="#{grabBusquedaBean.escucharGrabacionWAV(registro)}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

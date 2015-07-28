@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:dataGrid id="Extension" var="extension" value="#{panelBean.extensiones}" columns="7" >
+				<p:column>
+					<p:panel id="panel" header="#{extension.numCid}" style="font-size:15px;text-align:center">
+						<table>
+							<tr>
+								<td rowspan="4" width="30px">
+									<div id="estadoExten" class="estadoExtension" style="color : #{extension.estado.contains('OK') ? 'green' : 'red'};">
+										<div id="estadoCall"  class="estadoLlamada" style="background-color: #{extension.estadoLlamada == 0 ? 'green' : 'red'};"/>
+									</div>
+								</td>
+								<td>
+									<h:outputText value="#{extension.nombreCid}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h:outputText value="#{extension.contexto}" />
+								</td>
+							</tr>
+						</table>
+					</p:panel>
+				</p:column>
+			</p:dataGrid>
+			<p:poll interval="3" listener="#{panelBean.ConsultarExtensiones()}" update="Extension" />
+		</h:form> 
+	</ui:define>
+</ui:composition>

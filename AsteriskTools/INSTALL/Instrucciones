@@ -1,0 +1,17 @@
+Agregar en el archivo modules/system/layers/base/sun/jdk/main/module.xml la linea  <path name="com/sun/media/sound"/> dentro de la etiqueta <paths>
+
+
+
+ ARG 1. Numero de quien llama {CALLERID(num)}
+ ARG 2. Numero a donde llama {EXTEN}
+ ARG 3. CANAL PORDONDE SE ENVIA LA LLAMADA
+ ARG 4. Orientacion (salida-entrada-local)
+ ARG 5. Nodo o ubicacion del servidor
+
+trunk failover
+
+exten = s,1,Agi(grabar.agi,${CALLERID(num)}-${CUT(ARG1,/,3)}-${ARG3}-SALIDA-Pulxar)
+
+stdextend
+
+exten = s,4,Agi(grabar.agi,${CALLERID(num)}-${ARG1}-SIP-LOCAL-Pulxar)

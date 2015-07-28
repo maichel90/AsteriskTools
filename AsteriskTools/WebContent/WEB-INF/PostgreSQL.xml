@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+	<datasource jndi-name="java:/App/AsteriskToolsPostgres" pool-name="PostgresDS" enabled="true" jta="false" use-java-context="true" use-ccm="false">
+		<connection-url>jdbc:postgresql://10.5.0.3:5432/asterisktest</connection-url>
+		<driver>postgresql</driver>
+		<pool>
+			<min-pool-size>10</min-pool-size>
+			<max-pool-size>100</max-pool-size>
+		</pool>
+		<security>
+			<user-name>asterisk</user-name>
+			<password>4st3r1sk</password>
+		</security>
+		<validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<prepared-statement-cache-size>0</prepared-statement-cache-size>
+		</statement>
+	</datasource>
+</datasources>
+ 

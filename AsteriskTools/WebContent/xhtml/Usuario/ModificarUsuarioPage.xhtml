@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<h:form id="form">
+			<p:messages id="mensajeModificarUsuario" showDetail="true" closable="true" />
+			<p:dataTable id="modificarTable" value="#{UsuarioBean.usuarios}" editable="true" var="usuario" style="width:100%;margin-bottom:20px" >
+				<p:ajax event="rowEdit" listener="#{UsuarioBean.onRowEdit}" update=":form:mensajeModificarUsuario" />
+				<p:column headerText="Usuario">
+					<h:outputText value="#{usuario.usuario}" />
+				</p:column>
+				<p:column headerText="Nombre">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.nombre}" /></f:facet>
+						<f:facet name="input"><p:inputText value="#{usuario.nombre}" /></f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Apellido">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.apellido}" /></f:facet>
+						<f:facet name="input"><p:inputText value="#{usuario.apellido}" /></f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Administracion Usuarios">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.permisoAdministracionUsuarios}" /></f:facet>
+						<f:facet name="input">
+							<p:selectBooleanCheckbox value="#{usuario.permisoAdministracionUsuarios}" /> 
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Grabaciones Arbol">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.permisoBuscarGrabacionesArbol}" /></f:facet>
+						<f:facet name="input">
+							<p:selectBooleanCheckbox value="#{usuario.permisoBuscarGrabacionesArbol}" /> 
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Grabaciones Avanzado">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.permisoBuscarGrabacionesAvanzado}" /></f:facet>
+						<f:facet name="input">
+							<p:selectBooleanCheckbox value="#{usuario.permisoBuscarGrabacionesAvanzado}" /> 
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Restablecer Contrasena">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.permisoRestablecerContrasena}" /></f:facet>
+						<f:facet name="input">
+							<p:selectBooleanCheckbox value="#{usuario.permisoRestablecerContrasena}" /> 
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Visualizar Panel">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.permisoVisualizarPanel}" /></f:facet>
+						<f:facet name="input">
+							<p:selectBooleanCheckbox value="#{usuario.permisoVisualizarPanel}" /> 
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="Registro Llamadas">
+					<p:cellEditor>
+						<f:facet name="output">	<h:outputText value="#{usuario.permisoVisualizarRegistroLlamadas}" /></f:facet>
+						<f:facet name="input">
+							<p:selectBooleanCheckbox value="#{usuario.permisoVisualizarRegistroLlamadas}" /> 
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column style="width:32px">
+					<p:rowEditor />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

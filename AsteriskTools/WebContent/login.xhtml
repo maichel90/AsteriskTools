@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>CDR ASTERISK</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputScript library="js" name="primeFacesCustom.js" />
+</h:head>
+
+<h:body>
+	<h:form id="Login" class="formularioLogin">
+		<p:messages showDetail="true" closable="true" />
+		<h:graphicImage value="/resources/images/pulxar.png" />
+		<p>
+			<p:inputText value="#{loginBean.username}" placeholder="Usuario"/>
+		</p>
+		<p>
+			<p:password value="#{loginBean.password}" placeholder="Contrasena"/>
+		</p>		
+		<section class="seccionBotones"> 
+			<p:commandButton value="Ingresar" action="#{loginBean.AutenticarUsuario()}" update="Login"/> 
+		</section>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+	<datasource jndi-name="java:/App/AsteriskTools" pool-name="MysqlDS" enabled="true" jta="false" use-java-context="true" use-ccm="false">
+		<connection-url>jdbc:mysql://localhost:3306/asterisktest</connection-url>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver>mysql-5.1.26</driver>
+		<pool>
+			<min-pool-size>10</min-pool-size>
+			<max-pool-size>100</max-pool-size>
+		</pool>
+		<security>
+			<user-name>root</user-name>
+			<password>M1S9l</password>
+		</security>
+		<validation>
+			<validate-on-match>false</validate-on-match>
+			<background-validation>false</background-validation>
+		</validation>
+		<statement>
+			<prepared-statement-cache-size>0</prepared-statement-cache-size>
+		</statement>
+	</datasource>
+</datasources>
+ 

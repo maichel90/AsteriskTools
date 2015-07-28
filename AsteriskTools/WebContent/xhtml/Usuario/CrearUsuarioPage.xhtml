@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:messages id="mensajeFormularioUsuario" showDetail="true" closable="true" />
+			<p:panelGrid id="gridFormularioUsuario" styleClass="formularioUsuario">
+				<p:row>
+					<p:column colspan="2" style="font-size: initial;">
+						<br/>
+						<h:outputLabel value="Datos del usuario" />
+						<br/><br/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Nombre:" /></p:column>
+					<p:column>
+						<p:inputText value="#{UsuarioBean.nombreUsuario}" required="true" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Apellido:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{UsuarioBean.apellidoUsuario}" required="true" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Usuario:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{UsuarioBean.username}" required="true" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Confirmar usuario:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{UsuarioBean.cUsername}" required="true"/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Contrasena:" />
+					</p:column>
+					<p:column>
+						<p:password value="#{UsuarioBean.contrasena}" required="true"/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText value="Confirmar contrasena:" />
+					</p:column>
+					<p:column>
+						<p:password value="#{UsuarioBean.cContrasena}" required="true"/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column colspan="2">
+						<br/>
+						<h:outputLabel value="Permisos del usuario" style="font-size: initial;"/>
+						<br/><br/>
+						<p:selectBooleanCheckbox value="#{UsuarioBean.permisoBuscarGrabacionesArbol}" /> <h:outputText value="Buscar grabaciones en arbol" /> <br/>
+						<p:selectBooleanCheckbox value="#{UsuarioBean.permisoBuscarGrabacionesAvanzado}" /> <h:outputText value="Buscar grabaciones avanzado" /> <br/>
+						<p:selectBooleanCheckbox value="#{UsuarioBean.permisoVisualizarPanel}" /> <h:outputText value="Visualizar panel de usuarios" /> <br/>
+						<p:selectBooleanCheckbox value="#{UsuarioBean.permisoVisualizarRegistroLlamadas}" /> <h:outputText value="Visualizar registro de llamadas" /> <br/>
+						<p:selectBooleanCheckbox value="#{UsuarioBean.permisoAdministracionUsuarios}" /> <h:outputText value="Administracion de usuarios" /> <br/>
+						<p:selectBooleanCheckbox value="#{UsuarioBean.permisoRestablecerContrasena}" /> <h:outputText value="Restablecer contrasena" /> <br/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column colspan="2" style="text-align: right; font-size: initial;">
+						<p:commandButton value="Agregar" action="#{UsuarioBean.AgregarNuevoUsuario()}" update="gridFormularioUsuario mensajeFormularioUsuario"/> 
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

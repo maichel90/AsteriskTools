@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	template="/template/Template.xhtml">
+
+	<ui:define name="content">
+		<p:chart type="line" model="#{dashboardBean.grabacionFecha}" style="width:95%" />
+		<br/>
+		<br/>
+		<br/>
+		<p:chart type="bar" model="#{dashboardBean.grabacionAgenteDiarioEntrante}" rendered="#{!dashboardBean.isEmptyGrabacionAgenteDiarioSaliente}" style="width:95%"/>
+		<br/>
+		<br/>
+		<br/>
+		<p:chart type="bar" model="#{dashboardBean.grabacionAgenteDiarioSaliente}" rendered="#{!dashboardBean.isEmptyGrabacionAgenteDiarioSaliente}" style="width:95%"/>
+		<br/>
+		<br/>
+		<br/>
+		<p:chart type="bar" model="#{dashboardBean.grabacionAgenteMensualEntrante}" rendered="#{!dashboardBean.isEmptyGrabacionAgenteMensualEntrante}" style="width:95%"/>
+		<br/>
+		<br/>
+		<br/>
+		<p:chart type="bar" model="#{dashboardBean.grabacionAgenteMensualSaliente}" rendered="#{!dashboardBean.isEmptyGrabacionAgenteMensualSaliente}" style="width:95%"/>
+		<br/>
+		<br/>
+		<br/>
+	</ui:define>
+</ui:composition>

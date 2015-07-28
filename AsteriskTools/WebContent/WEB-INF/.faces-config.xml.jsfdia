@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#*" PATH="/*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:0" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Inicio::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="Inicio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="CdrPage::#xhtml#CdrPage.xhtml"
+    NAME="output1" PATH="/xhtml/CdrPage.xhtml"
+    TARGET="rules:#xhtml#CdrPage.xhtml" TITLE="CdrPage" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="GrabacionBusqueda::#xhtml#Busqueda#GrabacionBusquedaPage.xhtml"
+    NAME="output2" PATH="/xhtml/Busqueda/GrabacionBusquedaPage.xhtml"
+    TARGET="rules:#xhtml#Busqueda#GrabacionBusquedaPage.xhtml"
+    TITLE="GrabacionBusqueda" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="GrabacionArbol::#xhtml#Busqueda#GrabacionArbolPage.xhtml"
+    NAME="output3" PATH="/xhtml/Busqueda/GrabacionArbolPage.xhtml"
+    TARGET="rules:#xhtml#Busqueda#GrabacionArbolPage.xhtml"
+    TITLE="GrabacionArbol" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="PanelPage::#xhtml#PanelPage.xhtml"
+    NAME="output4" PATH="/xhtml/PanelPage.xhtml"
+    TARGET="rules:#xhtml#PanelPage.xhtml" TITLE="PanelPage" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="CrearUsuario::#xhtml#Usuario#CrearUsuarioPage.xhtml"
+    NAME="output6" PATH="/xhtml/Usuario/CrearUsuarioPage.xhtml"
+    TARGET="rules:#xhtml#Usuario#CrearUsuarioPage.xhtml"
+    TITLE="CrearUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ModificarUsuario::#xhtml#Usuario#ModificarUsuarioPage.xhtml"
+    NAME="output9" PATH="/xhtml/Usuario/ModificarUsuarioPage.xhtml"
+    TARGET="rules:#xhtml#Usuario#ModificarUsuarioPage.xhtml"
+    TITLE="ModificarUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="RestablecerContrasena::#xhtml#RestablecerContrasena.xhtml"
+    NAME="output5" PATH="/xhtml/RestablecerContrasena.xhtml"
+    TARGET="rules:#xhtml#RestablecerContrasena.xhtml"
+    TITLE="RestablecerContrasena" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="288,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#CdrPage.xhtml"
+  PATH="/xhtml/CdrPage.xhtml" SHAPE="288,80,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#PanelPage.xhtml"
+  PATH="/xhtml/PanelPage.xhtml" SHAPE="288,136,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#Usuario#CrearUsuarioPage.xhtml"
+  PATH="/xhtml/Usuario/CrearUsuarioPage.xhtml" SHAPE="32,849,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#Usuario#ModificarUsuarioPage.xhtml"
+  PATH="/xhtml/Usuario/ModificarUsuarioPage.xhtml" SHAPE="32,1073,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#Busqueda#GrabacionArbolPage.xhtml"
+  PATH="/xhtml/Busqueda/GrabacionArbolPage.xhtml" SHAPE="32,1297,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#Busqueda#GrabacionBusquedaPage.xhtml"
+  PATH="/xhtml/Busqueda/GrabacionBusquedaPage.xhtml" SHAPE="32,1521,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#RestablecerContrasena.xhtml"
+  PATH="/xhtml/RestablecerContrasena.xhtml" SHAPE="304,481,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

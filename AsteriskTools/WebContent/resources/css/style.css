@@ -1,0 +1,152 @@
+/* 
+Estilos de las etiquetas HTML
+*/
+
+html {
+	font-family: Calibri;
+}
+
+input {
+	width: 95%;
+}
+
+/* 
+Estilos de los id de los elementos HTML
+*/
+
+#page{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#header{
+	float: left;
+	width: 100%;
+	margin-bottom:16px;
+	background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+
+#navigator{
+	display:inline-block;
+	vertical-align:top;
+	width: 170px;
+	margin-right: 15px;
+	margin-bottom:16px;
+}
+
+#content{
+	display:inline-block;
+	margin-bottom:16px;
+	width: calc(100% - 190px);
+}
+
+#footer{
+	float:left;
+	width: 100%;
+}
+
+#arbol{
+	display:inline-block;
+	vertical-align: top;
+}
+
+#contenido{
+	display:inline-block;
+	width: calc(100% - 130px);
+}
+
+
+/********************************************
+ ********************************************
+ ******************************************** 
+Estilos de las clases de los elementos HTML
+ ********************************************
+ ********************************************
+ *******************************************/
+
+.estadoExtension{
+	padding: 3px;
+	width: 25px;
+	height: 25px;
+	border: 4px solid;
+}
+
+.estadoLlamada{
+	width: 100%;
+	height: 100%;
+}
+
+.articulo{
+	display:inline-block;
+	width: 23.6%;
+	margin-left: 1%;
+	background: linear-gradient(to bottom,#e5e5e5 0%, #ffffff 100%);
+	}
+
+.ui-widget,.ui-widget .ui-widget {
+    font-size: 80% !important;
+}
+
+.ui-menu .ui-menuitem-text {
+	font-size: 12px;
+}
+
+.ui-selectoneradio tr td {
+	padding: 2px !important;
+}
+
+.ui-panelgrid { 
+	width: 100%;
+}
+
+.ui-menu {
+	width: 0;
+}
+
+.ui-tree {
+	width: 120px !important;
+}
+
+.ui-panel .ui-panel-content{
+	padding: 0 !important;
+}
+
+.ui-panel-titlebar{
+	font-size: 15px ! important;
+}
+
+.formularioUsuario
+{
+	width: 40%;
+}
+
+.formularioUsuario .ui-panelgrid-even, .formularioUsuario .ui-panelgrid-odd , .formularioUsuario .ui-panelgrid-cell
+{
+	border-style: none !important;
+}
+
+.formularioUsuario .ui-chkbox
+{
+	padding-right: 20px;
+	padding-bottom: 5px;
+}
+
+.formularioUsuario label
+{
+	font-weight: bold;
+}
+
+
+
+.formularioLogin
+{
+    background-color: #F3F3F3;
+    border-radius: 7px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 4px white inset, 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 100px auto;
+    text-align: center;
+    vertical-align: middle;
+    width: 270px;
+    padding: 10px;
+}
+
